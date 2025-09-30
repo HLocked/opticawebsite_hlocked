@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+/* Tobias Font */
+@font-face {
+  font-family: 'Tobias';
+  src: url('/fonts/Tobias/Tobias-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tobias';
+  src: url('/fonts/Tobias/Tobias-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tobias';
+  src: url('/fonts/Tobias/Tobias-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tobias';
+  src: url('/fonts/Tobias/Tobias-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Monument Grotesk Semi-Mono Font */
+@font-face {
+  font-family: 'Monument Grotesk Semi-Mono';
+  src: url('/fonts/MonumentGrotesk/MonumentGrotesk-Semi-Mono.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  --font-tobias: 'Tobias', ui-sans-serif, system-ui, sans-serif;
+  --font-monument-semi-mono: 'Monument Grotesk Semi-Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  /* App brand colors */
+  --color-brand-off-white: #F4F5F7;
+  --color-brand-light-bg: #FCFCFF;
+  --color-brand-dark-bg: #1a1919;
+  --color-brand-black: #0A0A0A;
+  --color-brand-gray: #1A1A1A;
+  --color-brand-white: #FFFFFF;
+}
+
+/* Custom animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+:root {
+  --app-bg: #F8F9FA;
+  --app-text: #000000;
+}
+
+.dark {
+  --app-bg: #1a1919;
+  --app-text: #ffffff;
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+body {
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  @apply antialiased;
+}
+
+/* Utility classes for consistent theming */
+.themed-bg {
+  background-color: var(--app-bg);
+}
+
+.themed-text {
+  color: var(--app-text);
+}
+
+/* Logo color switching - override hardcoded SVG fills */
+img[src*="optica-text.svg"], 
+img[src*="optica-icon.svg"] {
+  filter: invert(1) brightness(0);
+}
+
+.dark img[src*="optica-text.svg"], 
+.dark img[src*="optica-icon.svg"] {
+  filter: invert(0) brightness(1);
+}
+
+/* Ensure AnimatedLogo SVG colors switch properly */
+.text-black svg path,
+.text-black svg {
+  color: #000000;
+}
+
+.dark .text-black svg path,
+.dark .text-black svg {
+  color: #ffffff;
+}
+
+/* Force mission text to be black in light mode - override any other styles */
+#mission p,
+#mission span[data-word],
+#mission .font-monument-semi-mono,
+#mission .font-monument-semi-mono p,
+#mission .font-monument-semi-mono span,
+section[id="mission"] p,
+section[id="mission"] span[data-word],
+section[id="mission"] .font-monument-semi-mono,
+[class*="font-monument-semi-mono"] {
+  color: #000000 !important;
+}
+
+.dark #mission p,
+.dark #mission span[data-word],
+.dark #mission .font-monument-semi-mono,
+.dark #mission .font-monument-semi-mono p,
+.dark #mission .font-monument-semi-mono span,
+.dark section[id="mission"] p,
+.dark section[id="mission"] span[data-word],
+.dark section[id="mission"] .font-monument-semi-mono,
+.dark [class*="font-monument-semi-mono"] {
+  color: #e5e7eb !important;
+}
+
+/* Force mission header to be black in light mode */
+#mission h2,
+section[id="mission"] h2 {
+  color: #000000 !important;
+}
+
+.dark #mission h2,
+.dark section[id="mission"] h2 {
+  color: #d1d5db !important;
+}
+
+/* Force Thorin section text to always be white */
+.thorin-section p,
+.thorin-section h1,
+.thorin-section h2,
+.thorin-section .text-white,
+.thorin-section .text-white\/70,
+.thorin-section .text-white\/85 {
+  color: #ffffff !important;
+}

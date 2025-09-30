@@ -1,0 +1,21 @@
+{
+  "name": "Optica Industries",
+  "short_name": "Optica",
+  "description": "Optica Industries is rebuilding the metal supply for the modern era.",
+  "icons": [
+    {
+      "src": "/favicon.ico?v=2",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/logo/optica-icon.svg?v=2",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#000000",
+  "display": "standalone",
+  "start_url": "/"
+}
