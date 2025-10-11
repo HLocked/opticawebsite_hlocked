@@ -4,8 +4,8 @@
   "description": "Optica Industries is rebuilding the metal supply for the modern era.",
   "icons": [
     {
-      "src": "/favicon.ico?v=2",
-      "sizes": "16x16 32x32",
+      "src": "/favicon.ico?v=3",
+      "sizes": "16x16 32x32 48x48",
       "type": "image/x-icon"
     },
     {
