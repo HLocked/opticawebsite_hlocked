@@ -156,7 +156,7 @@ function Footer() {
           </h4>
           <div className="w-full flex justify-center sm:justify-start">
             <img
-              src="/logo/optica-icon.svg"
+              src="/logo/favicon-192x192.png"
               alt="Optica Industries icon"
               className="w-14 h-14 sm:hidden"
               style={{ filter: 'brightness(0) invert(1)' }}
